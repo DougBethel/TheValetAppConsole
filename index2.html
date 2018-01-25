@@ -7,11 +7,12 @@
  <title>Valet Express</title>
 
  <!-- Bootstrap -->
- 
+
 <link href="https://fonts.googleapis.com/css?family=Anton|Kavivanar|Roboto|Roboto+Condensed" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-   
- 
+  <link rel="stylesheet" href="css/style.css">
+
+
 
 </head>
 
@@ -20,7 +21,7 @@
  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -34,12 +35,12 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 
-
-	<h1>VALETED CARS</h1>
+<div class="customContainer"
+	<h1 class="valeted">VALETED CARS</h1>
   <a class="btn btn-primary" "fonts" href="#" role="button" id="sign" onclick="home()">Home</a>
 	<br>
 	<br>
@@ -57,8 +58,7 @@
                 </tbody>
               </table>
 
-
-
+</div>
 
  <script src="https://code.jquery.com/jquery.js"></script>
  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
@@ -86,8 +86,8 @@ function home(){
  var database = firebase.database();
 
  database.ref().push({
-      
-       
+
+
       });
  database.ref().on("value", function(snapshot) {
 
@@ -102,32 +102,32 @@ var newRow = $('<tr>');
       emailCell.append(childSnapshot.val().email);
 
       var carCell = $('<td>');
-      
+
       carCell.append(childSnapshot.val().carDetails);
 
       newRow.append(nameCell);
       newRow.append(emailCell);
       newRow.append(carCell);
-      
+
 
       $('#info').append(newRow);
 
     });
 
-    });  
-     
-
-
-        
-        
-      
-      
-
-    
+    });
 
 
 
-   
+
+
+
+
+
+
+
+
+
+
 
 </script>
  </body>
